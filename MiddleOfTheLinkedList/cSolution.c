@@ -4,14 +4,19 @@
 int main() {
 
     struct ListNode* node = head;
-    int count = 0;
-    struct ListNode* nodes[100];
+    struct ListNode* nodeDouble = head;
                 
-    while (node->next) {
-        nodes[count] = node;
+    while (nodeDouble->next) {
+
         node = node->next;
-        count++;
+        nodeDouble = nodeDouble->next->next == NULL ? nodeDouble->next : nodeDouble->next->next;
+
+        if (!nodeDouble->next) {
+            return node;
+        }
+
     }
-    return nodes[(int)floor(count / 2)];
+
+    return node;
 
 }
