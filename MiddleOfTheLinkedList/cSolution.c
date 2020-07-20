@@ -12,7 +12,7 @@ int main() {
         nodeDouble = nodeDouble->next->next == NULL ? nodeDouble->next : nodeDouble->next->next;
 
         if (!nodeDouble->next) {
-            return node;
+            break;
         }
 
     }
